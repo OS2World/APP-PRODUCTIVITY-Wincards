@@ -1,0 +1,9 @@
+Archive Name: wincards.zip
+Program Description: (keep it under 60 characters) An OS/2 PM replacement for the Windows cardfile.
+Operating System/Version: OS/2
+Program Source: Included
+Replaces: None
+Your name: Richard Price
+Your email address: 100022.2211@compuserve.com
+Proposed directory for placement: os2/wpsutil
+

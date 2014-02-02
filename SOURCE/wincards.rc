@@ -1,0 +1,96 @@
+/* wincards.rc */
+
+#include <os2.h>
+#include "WINCARDS.H"
+
+ICON ID_WINCARDS wincards.ico
+
+MENU ID_WINCARDS
+BEGIN
+        SUBMENU "~File",                                IDM_FILE
+                BEGIN
+                        Menuitem "~New",                IDM_NEW
+                        Menuitem "~Open...",            IDM_OPEN
+                        Menuitem "~Save\tCtrl+s",       IDM_SAVE
+                        Menuitem "Save ~As...",         IDM_SAVEAS
+                        Menuitem "~Merge...",           IDM_MERGE
+                        Menuitem SEPARATOR
+                        Menuitem "~About",              IDM_ABOUT
+                END
+        SUBMENU "~Edit",                                IDM_EDIT
+                BEGIN
+                        Menuitem "~Copy\tCtrl+c",       IDM_COPY
+                        Menuitem "Cu~t\tCtrl+x",        IDM_CUT
+                        Menuitem "~Paste\tCtrl+v",      IDM_PASTE
+                        Menuitem "~Index...\tF6",       IDM_INDEX
+                END
+        SUBMENU "~Card",                                IDM_CARD
+                BEGIN
+                        Menuitem "~Add...\tF7",         IDM_ADD
+                        Menuitem "~Delete",             IDM_DELETE
+                        Menuitem "D~uplicate",          IDM_DUP
+                END
+MENUITEM "F~ind...",                                    IDM_FIND
+MENUITEM "E~xit",                                       IDM_EXIT
+
+END
+
+
+ACCELTABLE ID_WINCARDS
+BEGIN
+
+  VK_F3,  IDM_EXIT,     VIRTUALKEY
+  VK_F6,  IDM_INDEX,    VIRTUALKEY
+  VK_F7,  IDM_ADD,      VIRTUALKEY
+  "C",    SRCH_C,       CHAR, CONTROL, SHIFT
+  "V",    SRCH_V,       CHAR, CONTROL, SHIFT
+  "X",    SRCH_X,       CHAR, CONTROL, SHIFT
+  "S",    IDM_SAVE,     CHAR, CONTROL
+END
+
+
+DLGTEMPLATE IDD_SEARCH
+{
+DIALOG "Find", 0, 4, 80, 248, 44,, FCF_DLGBORDER | FCF_TITLEBAR
+        {
+        LTEXT "Search for:", -1, 4, 28, 48, 8
+        ENTRYFIELD "", IDD_SEARCH, 56, 28, 184, 8, ES_MARGIN
+        DEFPUSHBUTTON "OK" DID_OK, 56, 8, 40, 12, WS_GROUP
+        DEFPUSHBUTTON "Cancel" DID_CANCEL, 112, 8, 40, 12, WS_GROUP
+       }
+}
+
+DLGTEMPLATE IDD_ADD
+{
+DIALOG "Add Card", 0, 4, 80, 248, 44,, FCF_DLGBORDER | FCF_TITLEBAR
+        {
+        LTEXT "Add card:", -1, 8, 28, 48, 8
+        ENTRYFIELD "", IDD_ADD, 56, 28, 184, 8, ES_MARGIN
+        DEFPUSHBUTTON "OK" DID_OK, 56, 8, 40, 12, WS_GROUP
+        DEFPUSHBUTTON "Cancel" DID_CANCEL, 112, 8, 40, 12, WS_GROUP
+       }
+}
+
+DLGTEMPLATE IDD_INDEX
+{
+DIALOG "Edit Index", 0, 4, 80, 248, 44,, FCF_DLGBORDER | FCF_TITLEBAR
+        {
+        LTEXT "Index:", -1, 16, 28, 48, 8
+        ENTRYFIELD "", IDD_INDEX, 56, 28, 184, 8, ES_MARGIN
+        DEFPUSHBUTTON "OK" DID_OK, 56, 8, 40, 12, WS_GROUP
+        DEFPUSHBUTTON "Cancel" DID_CANCEL, 112, 8, 40, 12, WS_GROUP
+       }
+}
+
+DLGTEMPLATE IDD_ABOUT
+{
+DIALOG "", 0, 24, 60, 120, 60,, FCF_DLGBORDER
+        {
+        CTEXT   "OS/2 Cardfile Reader"  -1, 10, 40, 100, 8
+        CTEXT   "by Richard Price"      -1, 10, 30, 100, 8
+        DEFPUSHBUTTON "OK" DID_OK, 40, 8, 40, 16, WS_GROUP
+        }
+}
+
+
+

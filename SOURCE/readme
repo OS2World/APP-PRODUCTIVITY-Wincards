@@ -1,0 +1,13 @@
+Cardfile/2
+
+The guts of the program is in Wincard.h and Cardfile.h; these contain the definition and functions for the card and linked list classes.  Making the cards a class of their own is sort of overkill, but it did allow me to learn about C++ polymorphism, etc. with regard to classes.  
+
+The linked list class is the most general form of linked list -- a doubly-linked circular list, i.e. each node linked to the ones preceding and following it, and the last node and first node also linked.  The pointer to the last node is redundant here, because you can find it by just tracing back one step from the first node; however, if you want to reuse this code for a linked list which is not circular, having the last node pointer in place already makes it easy.
+
+Cardcpp.h is the code to read in and save the file, and Wincards.cpp is the PM part of the program:  Mostly just one big case statement, as most PM programs seem to be.  It is reasonably well commented in most places, but there are some noticeable parts that I didn't comment as well as I could have.  It shouldn't be too hard to figure out, though.
+
+The actual filenames are not very helpful in figuring out what is in the files; I apologize -- I set them up early on (without much creativity, I admit), and the editor kept track of them from there on, so I never bothered to change them.
+
+I hope you find it useful.
+
+Richard Price
